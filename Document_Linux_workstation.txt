@@ -26,7 +26,7 @@ conda/pip install numpy matplotlib scipy pandas astropy
 conda/pip install jupyter
 conda/pip install emcee corner tqdm
 conda/pip install h5py
-
+('python --version' for checking the right version)
 ############################################
 5. Git identity setup
 git config --global user.name 'hyp0515'
