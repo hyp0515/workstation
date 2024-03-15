@@ -4,7 +4,7 @@ Github: https://github.com/hyp0515/workstation.git
 
 Baobab's website: https://baobabyoo.github.io/
 
-###########################################
+############################################
 1. Download Anaconda
 https://www.anaconda.com/download#Downloads
 
@@ -16,8 +16,13 @@ conda create --name enviornment_name pip
 conda activate enviornment_name
 
 4. Install Python Packages
+!!!
+If you want to install and run RADMC-3D, make sure to install older version of python and numpy
+conda install python=3.9
+conda install numpy=1.19.5
+!!!
 conda/pip install --upgrade pip
-conda/pip install numpy matplotlib scipy pandas
+conda/pip install numpy matplotlib scipy pandas astropy
 conda/pip install jupyter
 conda/pip install emcee corner tqdm
 conda/pip install h5py
@@ -32,5 +37,32 @@ git config --global user.email 'pinkie0515@gmail.com'
 https://code.visualstudio.com/download
 
 7. Set up Github in VSCode
+
+############################################
+8. Download RADMC-3D
+https://www.ita.uni-heidelberg.de/~dullemond/software/radmc-3d/manual_radmc3d/index.html
+git clone https://github.com/dullemond/radmc3d-2.0.git
+
+9. Enter radmc3d-2.0/src and edit Makefile
+cd radmc3d-2.0/src
+vim Makefile 
+(FF = gfortran -fopenmp)
+
+10. Type 'make' and 'make install'
+
+11.Edit ~/.bashrc
+export PATH=/myhomedirectory/bin:$PATH ('pwd' for knowing the path)
+source ~/.bashrc (the environment will go back to 'base')
+
+12. Type 'radmc3d' for confirmation
+
+############################################
+13. Edit ~/.bashrc for 'radmc3d_tools'
+export PYTHONPATH=$HOME/bin/python:$PYTHONPATH ('pwd' for knowing the path)
+
+14. Install 'radmc3dPy' library
+cd radmc3d-2.0/python/radmc3dPy
+python setup.py install --user
+
 
 
